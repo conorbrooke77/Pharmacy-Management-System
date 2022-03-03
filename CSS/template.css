@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+/* Left Nav-Bar */
+.sideBar {
+    background-color: #222D32;
+    height: 100vh;
+    color: white;
+}
+
+.logoContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1em;
+}
+
+/* Logo and Text Underneath */
+header {
+    text-align: center;
+    margin: 1em 0 2.5em 0;
+}
+
+.sideBar h2 {
+    font-family: 'Arima Madurai', cursive;
+    font-size: 20px;
+    color: #ECECEC;
+}
+
+.sideBar ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60%;
+    padding: 0;
+}
+
+.sideBar li {
+    list-style: none;
+    padding: 1.8em 0 1.8em 4.5em;
+}
+
+.mainNav {
+    font-size: 21px;
+    color: #DFDFDF;
+    text-decoration: none;
+}
+
+.sideBar li:hover {
+    border-left: solid 6px #CE0000;
+    background-color: #131A1D;
+}
+
+.active {
+    border-left: solid 6px #CE0000;
+    background-color: #131A1D;
+}
+
+/* Main */
+main {
+    display: grid;
+    grid-template-rows: 1fr 12fr;
+}
+/*Nav-Bar */
+.navBar {
+    display: flex;
+    justify-content: right;
+    color: white;
+    background-color: #223641;
+}
+
+.profileContainer {
+    width: 14%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 8em;
+}
