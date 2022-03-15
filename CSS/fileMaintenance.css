@@ -1,42 +1,28 @@
 /* Navagation Menu For Entitys in the system */
 
+/* Nav */
 .innerMenu {
     background-color: #24252A;
     justify-content: center;
 }
 
-.innerMenu .outerUl {
-    margin: 0 15em 0 13em;
+/* Main ul list items */
+.outerUl {
+    margin: 0 10em 0 10em;
     display: flex;
     list-style-type: none;
     justify-content: space-between;
 }
 
-.innerMenu li {
+/* Outer li */
+.outerUl li {
     text-align: center;
     width: 20%;
     padding: 1.8em 0 1.8em 0;
     position: relative;
 }
 
-/*Dropdown 
-.innerMenu .outerUl li ul {
-    width: 70%;
-    display: block;
-    position: absolute;
-    background-color: #868686;
-    margin-top: 2em;
-}
-
-.innerMenu .outerUl li ul {
-    width: 70%;
-    display: block;
-    position: absolute;
-    background-color: #868686;
-    margin-top: 2em;
-}
-*/
-.innerMenu a {
+.outerUl a {
     color: #D2D2D2;
     font-size: 20px;
     text-decoration: none;
@@ -50,4 +36,34 @@
 .selected {
     background-color: #464851;
     color: white;
+}
+
+
+/*------ Drop Down Menu ------*/
+
+/* Inner ul's */
+.outerUl li ul {
+    width: 100%;
+    display: none;
+    position: absolute;
+    background-color: #be5b5b;
+    margin-top: 1.8em;
+    list-style: none;
+    padding-left: 0;
+    border-radius: 0px 0px 6px 6px;
+}
+
+.outerUl li:hover ul {
+    display: block;
+}
+
+
+.outerUl li ul a{
+    color: white;
+    font-size: 18px;
+}
+
+.outerUl li ul li{
+    padding: 1.8em 0 1.8em 0;
+    width: 100%;
 }
