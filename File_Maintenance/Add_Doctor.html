@@ -24,7 +24,7 @@
                 <li><a class="mainNav" href="">Counter Sales</a></li>
                 <li><a class="mainNav" href="">Dispense Drugs</a></li>
                 <li><a class="mainNav" href="">Stock Control Menu</a></li>
-                <li><a class="mainNav" href="">Suppliers Accounts Menu</a></li>
+                <li><a class="mainNav" href="../Supplier Accounts/Payment_To_Suppliers.html">Suppliers Accounts Menu</a></li>
                 <li class="active"><a class="mainNav" href="Add_Doctor.html">File Maintenance Menu</a></li>
                 <li><a class="mainNav" href="">Reports Menu</a></li>
                 <li id="closeWindow" ><a class="mainNav" href="">Exit</a></li>
@@ -82,12 +82,12 @@
                 </nav>
                 
                 <!-- Insert Form -->
-                <form class="Insert-Doctor">
+                <form class="Insert-Doctor" action="../PHP/insert.php">
 
                     <!-- Header Information-->
                     <div class="Form-Header">
                         <h2>Add Doctor</h2>
-                        <p>Complete the form below to add a new Doctor into the system.</p>
+                        <p>Complete the form below to add a new Doctor to the system.</p>
                     </div>
 
                     <!-- All the input content of the form-->
@@ -99,22 +99,23 @@
         
                         <div class="inputbox">
                             <label for="firstname">Doctor's Firstname </label>
-                            <input type="text" name="firstname" id="firstname" placeholder="Enter Firstname"/>
+                            <input type="text" name="firstname" id="firstname" placeholder="Enter Firstname" required/>
                         </div>
 
+                        <!-- When entering a phone number it must match the set pattern-->
                         <div class="inputbox">
                             <label for="telephoneNumber">Surgery's Telephone Number </label>
-                            <input type="text" name="telephoneNumber" id="telephoneNumber" placeholder="Enter Telephone Number" required/>
+                            <input type="text" name="telephoneNumber" id="telephoneNumber" placeholder="Enter Telephone Number" title="A phone number can have the pattern 083 111 1111, (083) 111 1111 or 1111111111" pattern="\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}" required/>
                         </div>
         
                         <div class="inputbox">   
                             <label for="mobileNumber">Surgery's Mobile Number </label>
-                            <input type="text" name="mobileNumber" id="mobileNumber" placeholder="Enter Mobile Number"/>
+                            <input type="text" name="mobileNumber" id="mobileNumber" placeholder="Enter Mobile Number" title="A phone number can have the pattern 083 111 1111, (083) 111 1111 or 1111111111" pattern="\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}" required/>
                         </div>
                         
                         <div class="inputbox">
                             <label for="homeTelephone">Home Telephone Number </label>
-                            <input type="text" name="homeTelephone" id="homeTelephone" placeholder="Enter Home Telephone" required/>
+                            <input type="text" name="homeTelephone" id="homeTelephone" placeholder="Enter Home Telephone" title="A phone number can have the pattern 083 111 1111, (083) 111 1111 or 1111111111" pattern="\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}" required/>
                         </div>
 
                         <!-- Surgery Adress Section-->
@@ -125,17 +126,17 @@
 
                             <div class="inputbox" id="boxPadding">
                                 <label for="surgeryStreet">Surgery's Street </label>
-                                <input type="url" name="surgeryStreet" id="surgeryStreet" placeholder="Enter Surgery's Street" required/>
+                                <input type="text" name="surgeryStreet" id="surgeryStreet" placeholder="Enter Surgery's Street" required/>
                             </div>
             
                             <div class="inputbox" id="boxPadding">   
                                 <label for="surgeryTown">Surgery's Town </label>
-                                <input type="text" name="surgeryTown" id="surgeryTown" placeholder="Enter Surgery's Town"/>
+                                <input type="text" name="surgeryTown" id="surgeryTown" placeholder="Enter Surgery's Town" required/>
                             </div>
 
                             <div class="inputbox" id="boxPadding">   
                                 <label for="surgeryCounty">Surgery's County </label>
-                                <input type="text" name="surgeryCounty" id="surgeryCounty" placeholder="Enter Surgery's County"/>
+                                <input type="text" name="surgeryCounty" id="surgeryCounty" placeholder="Enter Surgery's County" required/>
                             </div>
 
                         </section>
@@ -147,17 +148,17 @@
                             <h3>Home Address Information</h3>
                             <div class="inputbox" id="boxPadding">
                                 <label for="homeStreet">Home Street </label>
-                                <input type="url" name="homeStreet" id="homeStreet" placeholder="Enter Home Street" required/>
+                                <input type="text" name="homeStreet" id="homeStreet" placeholder="Enter Home Street" required/>
                             </div>
             
                             <div class="inputbox" id="boxPadding">   
                                 <label for="homeTown">Home Town </label>
-                                <input type="text" name="homeTown" id="homeTown" placeholder="Enter Home Town"/>
+                                <input type="text" name="homeTown" id="homeTown" placeholder="Enter Home Town" required/>
                             </div>
 
                             <div class="inputbox" id="boxPadding">   
                                 <label for="homeCounty">Home County </label>
-                                <input type="text" name="homeCounty" id="homeCounty" placeholder="Enter Home County"/>
+                                <input type="text" name="homeCounty" id="homeCounty" placeholder="Enter Home County" required/>
                             </div>
 
                         </section>
