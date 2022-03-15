@@ -1,3 +1,5 @@
+/* This is the template menu CSS that should be included in all pages of this project */
+
 * {
     margin: 0;
     font-family: 'Arial', sans-serif;
@@ -10,6 +12,10 @@ body {
 
 /* Left Nav-Bar */
 .sideBar {
+    /*The sidebars position on the Screen is now fixed and its z index has been increased to allow for no element to cover the sidebar */
+    position: fixed;
+    z-index: 10;
+    width: 20vw;
     background-color: #222D32;
     height: 100vh;
     color: white;
@@ -63,23 +69,34 @@ header {
     background-color: #131A1D;
 }
 
+
 /* Main */
 main {
-    display: grid;
-    grid-template-rows: 1fr 12fr;
+    width: 80vw;
+    margin-top: 8vh;
+    margin-left: 20vw;
 }
+
 /*Nav-Bar */
 .navBar {
     display: flex;
     justify-content: right;
     color: white;
     background-color: #223641;
+    width: 100%;
+    /*The navbars position on the Screen is now fixed*/
+    position: fixed;
+    z-index: 1;
+    height: 8vh;
 }
 
 .profileContainer {
-    width: 14%;
+    width: 12%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-right: 8em;
+    margin-right: 10em;
+}
+
+.content {
 }
