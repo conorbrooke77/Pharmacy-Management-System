@@ -1,0 +1,74 @@
+.Insert-Doctor {
+    display: grid;
+    grid-template-rows: 1.1fr 9fr 2fr;
+    margin: 5em 0 0 26em;
+    padding: 1em 0 0 0;
+}
+
+.Input-Content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.Address-Sections {
+    display: flex;
+    flex-direction: column;
+    padding: 4em 0 2em 0;
+}
+
+.inputbox {
+    display: flex;
+    align-items: center;
+    width: 58%;
+    justify-content: space-between;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 19px;
+}
+
+.inputbox input{
+    width: 20em;
+    height: 2.5em;
+    padding: 0.5em 0 0.5em 2em;
+    border: solid 1.5px #bfbfbf;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#boxPadding {
+    padding-left: 1.5em;
+}
+
+.Form-Header h2{
+    color: #0a0a0a;
+    font-size: 2.3em;
+    font-weight: bold;
+    padding-bottom: 0.8em;
+}
+
+.Form-Header p{
+    color: #404040;
+    font-size: 17px;
+}
+
+.button {
+    padding-top: 5em;
+}
+
+.button input {
+    border: none;
+    background-color: #f09f1d;
+    width: 10em;
+    height: 3.3em;
+    color: white;
+    font-size: 17px;
+}
+
+#right {
+    margin-left: 2em;
+}
+
+.button input:hover {
+    background-color: #464851;
+}

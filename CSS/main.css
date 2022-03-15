@@ -8,6 +8,8 @@
 body {
     display: grid;
     grid-template-columns: 1fr 4fr;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 /* Left Nav-Bar */
@@ -99,4 +101,5 @@ main {
 }
 
 .content {
+    
 }

@@ -4,6 +4,7 @@
         <title>Pharma Technology | Add Doctor</title>
         <link rel="Stylesheet" href="../CSS/main.css" />
         <link rel="Stylesheet" href="../CSS/fileMaintenance.css" />
+        <link rel="Stylesheet" href="../CSS/Add_Doctor.css" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,6 +42,7 @@
             <section class="content">
                 <nav class="innerMenu">
                     <ul class="outerUl">
+                        <!-- Inner Drop Down Menu-->
                         <li class="outerLi"><a href="">Customer</a>
                             <ul>
                                 <li><a href="">Add Customer</a></li>
@@ -78,10 +80,96 @@
                         </li>
                     </ul>
                 </nav>
-                <section>
+                
+                <!-- Insert Form -->
+                <form class="Insert-Doctor">
 
-                </section>
+                    <!-- Header Information-->
+                    <div class="Form-Header">
+                        <h2>Add Doctor</h2>
+                        <p>Complete the form below to add a new Doctor into the system.</p>
+                    </div>
 
+                    <!-- All the input content of the form-->
+                    <section class="Input-Content">
+                        <div class="inputbox">
+                            <label for="surname">Doctor's Surname </label>
+                            <input type="text" name="surname" id="surname" placeholder="Enter Surname" autofocus/>
+                        </div>
+        
+                        <div class="inputbox">
+                            <label for="firstname">Doctor's Firstname </label>
+                            <input type="text" name="firstname" id="firstname" placeholder="Enter Firstname"/>
+                        </div>
+
+                        <div class="inputbox">
+                            <label for="telephoneNumber">Surgery's Telephone Number </label>
+                            <input type="text" name="telephoneNumber" id="telephoneNumber" placeholder="Enter Telephone Number" required/>
+                        </div>
+        
+                        <div class="inputbox">   
+                            <label for="mobileNumber">Surgery's Mobile Number </label>
+                            <input type="text" name="mobileNumber" id="mobileNumber" placeholder="Enter Mobile Number"/>
+                        </div>
+                        
+                        <div class="inputbox">
+                            <label for="homeTelephone">Home Telephone Number </label>
+                            <input type="text" name="homeTelephone" id="homeTelephone" placeholder="Enter Home Telephone" required/>
+                        </div>
+
+                        <!-- Surgery Adress Section-->
+                        <section class="Address-Sections">
+
+                            <!-- Surgery Address Header-->
+                            <h3>Sugery Address Information</h3>
+
+                            <div class="inputbox" id="boxPadding">
+                                <label for="surgeryStreet">Surgery's Street </label>
+                                <input type="url" name="surgeryStreet" id="surgeryStreet" placeholder="Enter Surgery's Street" required/>
+                            </div>
+            
+                            <div class="inputbox" id="boxPadding">   
+                                <label for="surgeryTown">Surgery's Town </label>
+                                <input type="text" name="surgeryTown" id="surgeryTown" placeholder="Enter Surgery's Town"/>
+                            </div>
+
+                            <div class="inputbox" id="boxPadding">   
+                                <label for="surgeryCounty">Surgery's County </label>
+                                <input type="text" name="surgeryCounty" id="surgeryCounty" placeholder="Enter Surgery's County"/>
+                            </div>
+
+                        </section>
+
+                        <!-- Home Adress Section-->
+                        <section class="Address-Sections">
+
+                            <!-- Home Address Header-->
+                            <h3>Home Address Information</h3>
+                            <div class="inputbox" id="boxPadding">
+                                <label for="homeStreet">Home Street </label>
+                                <input type="url" name="homeStreet" id="homeStreet" placeholder="Enter Home Street" required/>
+                            </div>
+            
+                            <div class="inputbox" id="boxPadding">   
+                                <label for="homeTown">Home Town </label>
+                                <input type="text" name="homeTown" id="homeTown" placeholder="Enter Home Town"/>
+                            </div>
+
+                            <div class="inputbox" id="boxPadding">   
+                                <label for="homeCounty">Home County </label>
+                                <input type="text" name="homeCounty" id="homeCounty" placeholder="Enter Home County"/>
+                            </div>
+
+                        </section>
+                    </section>
+
+                    <!-- Action Buttons for the form-->
+                    <div class="button">
+                        <input type="submit" name="submit" value="Submit">
+                        <input id="right" type="reset" name="reset" value="Clear Form">
+                    </div>
+
+                </form>
             </section>
         </main>
         <script src="../js.js"></script>
