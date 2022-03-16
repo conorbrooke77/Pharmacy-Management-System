@@ -1,0 +1,28 @@
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+	justify-content: center;
+	align-content: center;
+	height: 80vh;
+	text-align: center;
+}
+
+.confirmation {
+    grid-column: 2/3;
+}
+
+.phpH3 {
+    color: green;
+	font-size: 1.8em;
+}
+
+input {
+	margin-top: 5em;
+	border: none;
+    background-color: #f09f1d;
+    width: 10em;
+    height: 3.2em;
+    color: white;
+    font-size: 16px;
+}

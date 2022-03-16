@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 
-<?php
-    include 'db.inc.php'; //Datbase Connection
+<link rel="Stylesheet" href="../../CSS/main.css" />
+<link rel="Stylesheet" href="../../CSS/insert_doctor.css"/>
 
-    echo "The information below has been successfully recieved. <br>";
+<body>
+    <section class="confirmation">
+        <?php
+           include '../db.inc.php'; //Datbase Connection
 
-    //Query to grab doctorID
-    $data = "SELECT * FROM Doctor ORDER BY doctorID DESC LIMIT 1";
-    
-    //Make query
-    $result = mysqli_query($con,$data);
+           //Header for successful update
+            echo "<h4 class=\"phpH3\">The data has been successfully recieved.</h4> <br>";
 
-    //Fetch data from result
+            //Query to grab doctorID
+            $data = "SELECT * FROM Doctor ORDER BY doctorID DESC LIMIT 1";
 
-    while ($row = mysqli_fetch_array($result)) {
-        $doctorID = $row['doctorID'];
-    }
+            //Make query
+            $result = mysqli_query($con,$data);
 
-    // Incrementing DoctorID
-    $doctorID = $doctorID+1;
+            //Fetch data from result
 
-    if (!mysqli_query($con,$data))
-    {
-        die ("an error in the sql query: " . mysqli_error($con) );
-    }
+            while ($row = mysqli_fetch_array($result)) {
+                $doctorID = $row['doctorID'];
+            }
 
-    $sql = "insert into Doctor (doctorID, Surname, Firstname, SurgeryTelephoneNumber, SurgeryMobileNumber, HomeTelephoneNumber, SurgeryStreet, SurgeryTown, SurgeryCounty, HomeStreet, HomeTown, HomeCounty)
-    VALUES ('$doctorID','$_POST[surname]','$_POST[firstname]','$_POST[telephoneNumber]','$_POST[mobileNumber]','$_POST[homeTelephone]','$_POST[surgeryStreet]',
-            '$_POST[surgeryTown]','$_POST[surgeryCounty]','$_POST[homeStreet]','$_POST[homeTown]','$_POST[homeCounty]')";
+            // Incrementing DoctorID
+            $doctorID = $doctorID+1;
 
-    if (!mysqli_query($con,$sql))
-        {
-	        die ("an error in the sql query: " . mysqli_error($con) );
-        }
-    echo "<br>A record has been added for Doctor " . $_POST['firstname'] . " " . $_POST['surname'] . " with a unique ID of " . $doctorID;
+            if (!mysqli_query($con,$data))
+            {
+                die ("an error in the sql query: " . mysqli_error($con) );
+            }
 
-    mysqli_close($con);
+            $sql = "insert into Doctor (doctorID, Surname, Firstname, SurgeryTelephoneNumber, SurgeryMobileNumber, HomeTelephoneNumber, SurgeryStreet, SurgeryTown, SurgeryCounty, HomeStreet, HomeTown, HomeCounty)
+            VALUES ('$doctorID','$_POST[surname]','$_POST[firstname]','$_POST[telephoneNumber]','$_POST[mobileNumber]','$_POST[homeTelephone]','$_POST[surgeryStreet]',
+                    '$_POST[surgeryTown]','$_POST[surgeryCounty]','$_POST[homeStreet]','$_POST[homeTown]','$_POST[homeCounty]')";
 
-?>
-	<form action = "../../File_Maintenance/Add_Doctor.html" method = "POST">
-	    <br>
-	    <input type = "submit" value = "return to insert page"/>
-	</form>
+            if (!mysqli_query($con,$sql))
+                {
+        	        die ("an error in the sql query: " . mysqli_error($con) );
+                }
+
+            echo "<br>A record has been added for Doctor " . $_POST['firstname'] . " " . $_POST['surname'] . " with a unique ID of " . $doctorID;
+
+            mysqli_close($con);
+
+        ?>
+
+	    <form action = "../../File_Maintenance/Add_Doctor.html" method = "POST">
+	        <input type = "submit" value = "Return To System"/>
+	    </form>
+
+    </section>
+<body>
