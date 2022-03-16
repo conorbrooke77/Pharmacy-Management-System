@@ -82,12 +82,12 @@
                 </nav>
                 
                 <!-- Insert Form -->
-                <form class="Insert-Doctor" action="../PHP/Insert_Doctor/insert_doctor.php" method="Post">
+                <form class="Insert-Doctor" action="../PHP/Insert_Doctor/insert.php" method="Post">
 
                     <!-- Header Information-->
                     <div class="Form-Header">
-                        <h2>Add Doctor</h2>
-                        <p>Complete the form below to add a new Doctor to the system.</p>
+                        <h2>Amend Doctor</h2>
+                        <p>Change information in the form below to update the Doctor.</p>
                     </div>
 
                     <!-- All the input content of the form-->
@@ -166,7 +166,7 @@
 
                     <!-- Action Buttons for the form-->
                     <div class="button">
-                        <input type="submit" name="submit" value="Submit">
+                        <input type="submit" name="submit" value="Update">
                         <input id="right" type="reset" name="reset" value="Clear Form">
                     </div>
 

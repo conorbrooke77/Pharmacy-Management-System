@@ -3,12 +3,12 @@ body {
 }
 
 .content {
-    width: 95vw;
+    width: 115vw;
 }
 
 .view {
     margin: 5em 0em 0 0em;
-    width: 95vw;
+    width: 115vw;
 }
 
 h2 {
@@ -17,13 +17,35 @@ h2 {
 }
 
 .table {
-    display: flex;
-    justify-content: center;
-    margin-top: 5em;
-    padding: 0 4em 0 4em;
+    margin: 4em 2em 0 2em;
 }
 
-table th {
-    padding-left: 1.2em;
+table th, td{
+	padding: 1.5em 1em 1.5em 1em;
 }
 
+table {
+	border-collapse: collapse;
+	font-size: 18px;
+	text-align: left;
+}
+
+th {
+	background-color: #4db1eb;
+	color: white;
+}
+
+tr:nth-child(even) {
+	background-color: #ededed;
+}
+
+#editData {
+    background-color: #1298ff;
+    border-radius: 6px;
+}
+
+#editBtn {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 
 <?php 
-    session_start();
-    include '../db.inc.php';
+    include 'db.inc.php';
 
     $sql = "SELECT * FROM Doctor";
 
@@ -11,10 +10,11 @@
     if ($result->num_rows > 0) {
         while ($row = $result-> fetch_assoc()) {
             echo "<tr><td>" . $row["doctorID"] . "</td><td>" . $row["Surname"] . "</td><td>" . $row["Firstname"] . "</td><td>" . $row["SurgeryTelephoneNumber"] . "</td><td>" . $row["SurgeryMobileNumber"] . "</td><td>" . $row["HomeTelephoneNumber"] . "</td><td>" 
-            . $row["SurgeryStreet"] . "</td><td>" . $row["SurgeryTown"] . "</td><td>" . $row["SurgeryCounty"] . "</td><td>" . $row["HomeStreet"] . "</td><td>" . $row["HomeTown"] . "</td><td>" . $row["HomeCounty"] . "</td></tr>";
+            . $row["SurgeryStreet"] . "</td><td>" . $row["SurgeryTown"] . "</td><td>" . $row["SurgeryCounty"] . "</td><td>" . $row["HomeStreet"] . "</td><td>" . $row["HomeTown"] . "</td><td>" . $row["HomeCounty"] . 
+            "</td><td id=\"editData\"><a id=\"editBtn\" href=\"Update.html.php\">Edit</a></td></tr>";
         }
     } else {
-        echo "No Result"
+        echo "No Result";
     }
 
     if (!$result = mysqli_query($con,$sql))

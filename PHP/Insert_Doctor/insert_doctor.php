@@ -6,7 +6,7 @@
 <body>
     <section class="confirmation">
         <?php
-           include '../db.inc.php'; //Datbase Connection
+           include 'db.inc.php'; //Datbase Connection
 
            //Header for successful update
             echo "<h4 class=\"phpH3\">The data has been successfully recieved.</h4> <br>";

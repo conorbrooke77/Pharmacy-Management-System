@@ -52,7 +52,7 @@
                         <li class="outerLi, selected"  ><a href="Add_Doctor.html">Doctor</a>
                             <ul>
                                 <li><a href="Add_Doctor.html">Add Doctor</a></li>
-                                <li><a href="Amend_Doctor.html">Amend Doctor</a></li>
+                                <li><a href="Amend_Doctor.html.php">Amend Doctor</a></li>
                                 <li><a href="Delete_Doctor.html">Delete Doctor</a></li>
                             </ul>
                         </li>
@@ -86,18 +86,22 @@
                     </header>
                     <section class="table">
                         <table>
-                            <th>Doctor ID</th>
-                            <th>Surname</th>
-                            <th>Surgery's Telephone Number</th>
-                            <th>Mobile Number</th>
-                            <th>Home Telephone Number</th>
-                            <th>Surgery's Street</th>
-                            <th>Surgery's Town</th>
-                            <th>Surgery's County</th>
-                            <th>Home Street</th>
-                            <th>Home Town</th>
-                            <th>Home County</th>
-                            <th>Amend</th>
+                            <tr>
+                                <th>Doctor ID</th>
+                                <th>Surname</th>
+                                <th>Firstname</th>
+                                <th>Surgery's Telephone</th>
+                                <th>Mobile Number</th>
+                                <th>Home Telephone</th>
+                                <th>Surgery's Street</th>
+                                <th>Surgery's Town</th>
+                                <th>Surgery's County</th>
+                                <th>Home Street</th>
+                                <th>Home Town</th>
+                                <th>Home County</th>
+                                <th>Amend</th>
+                            </tr>
+                            <?php include '../PHP/View_Doctors/amend.php' ?>
                         </table>
                     </section>
                 </section>
