@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&display=swap" rel="stylesheet">
     </head>
     <body>
+        <?php include '../PHP/View_Doctors/edit.php'; ?>
         <!-- Nav Bar template-->
         <nav class="sideBar">
             <header>
@@ -79,6 +80,25 @@
                         </li>
                     </ul>
                 </nav>
+
+                <!-- Header Message for confirmation of successful update-->
+                <?php
+                    include '../PHP/View_Doctors/edit.php';
+
+                    if(isset($_SESSION['message'])):
+                ?>
+
+                <!--Creates a alert div at the top of the amend page-->
+                <div class="alert">
+                    <?php 
+                        //Loads message from edit file
+                        echo $_SESSION['message'];
+                        unset($_SESSION['message']);
+                    ?>
+                </div>
+                    
+                <?php endif ?>
+
                 <section class="view">
                     <header>
                         <h2>View And Amend</h2>

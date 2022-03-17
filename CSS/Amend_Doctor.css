@@ -51,3 +51,14 @@ tr:nth-child(even) {
     font-size: 18px;
     text-decoration: none;
 }
+
+.alert {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 2.5em;
+    padding-top: 1em;
+    background-color: #87ff8c;
+    color: #085c0c;
+    font-size: 19px;
+}

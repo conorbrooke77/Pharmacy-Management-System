@@ -5,6 +5,7 @@
         <link rel="Stylesheet" href="../CSS/main.css" />
         <link rel="Stylesheet" href="../CSS/fileMaintenance.css" />
         <link rel="Stylesheet" href="../CSS/Add_Doctor.css" />
+        <link rel="Stylesheet" href="../CSS/confirmation.css" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +13,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&display=swap" rel="stylesheet">
     </head>
     <body>
+        <!-- Load the php script session at top of body-->
+        <?php require_once '../PHP/View_Doctors/edit.php'?>
+
         <!-- Nav Bar template-->
         <nav class="sideBar">
             <header>
@@ -80,9 +84,9 @@
                         </li>
                     </ul>
                 </nav>
-                <?php include '../PHP/View_Doctors/edit.php'?>
+
                 <!-- Insert Form -->
-                <form class="Insert-Doctor" action="../PHP/Insert_Doctor/insert.php" method="Post">
+                <form class="Insert-Doctor" action="../PHP/View_Doctors/edit.php" method="Post">
                     <!-- Header Information-->
                     <div class="Form-Header">
                         <h2>Amend Doctor</h2>
@@ -93,28 +97,28 @@
                     <section class="Input-Content">
                         <div class="inputbox">
                             <label for="surname">Doctor's Surname </label>
-                            <input type="text" name="surname" id="surname" value="<?php echo $surname ?>"autofocus/>
+                            <input type="text" name="surname" id="surname" value="<?php echo $surname ?>" autofocus/>
                         </div>
         
                         <div class="inputbox">
                             <label for="firstname">Doctor's Firstname </label>
-                            <input type="text" name="firstname" id="firstname" placeholder="Enter Firstname" required/>
+                            <input type="text" name="firstname" id="firstname" value="<?php echo $firstname ?>" required/>
                         </div>
 
                         <!-- When entering a phone number it must match the set pattern-->
                         <div class="inputbox">
                             <label for="telephoneNumber">Surgery's Telephone Number </label>
-                            <input type="text" name="telephoneNumber" id="telephoneNumber" placeholder="Enter Telephone Number" title="A phone number can have the pattern 083 111 1111, (083) 111 1111 or 1111111111" pattern="\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}" required/>
+                            <input type="text" name="telephoneNumber" id="telephoneNumber" value="<?php echo $telephoneNumber ?>" title="A phone number can have the pattern 083 111 1111, (083) 111 1111 or 1111111111" pattern="\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}" required/>
                         </div>
         
                         <div class="inputbox">   
                             <label for="mobileNumber">Surgery's Mobile Number </label>
-                            <input type="text" name="mobileNumber" id="mobileNumber" placeholder="Enter Mobile Number" title="A phone number can have the pattern 083 111 1111, (083) 111 1111 or 1111111111" pattern="\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}" required/>
+                            <input type="text" name="mobileNumber" id="mobileNumber" value="<?php echo $mobileNumber ?>" title="A phone number can have the pattern 083 111 1111, (083) 111 1111 or 1111111111" pattern="\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}" required/>
                         </div>
                         
                         <div class="inputbox">
                             <label for="homeTelephone">Home Telephone Number </label>
-                            <input type="text" name="homeTelephone" id="homeTelephone" placeholder="Enter Home Telephone" title="A phone number can have the pattern 083 111 1111, (083) 111 1111 or 1111111111" pattern="\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}" required/>
+                            <input type="text" name="homeTelephone" id="homeTelephone" value="<?php echo $homeTelephone ?>" title="A phone number can have the pattern 083 111 1111, (083) 111 1111 or 1111111111" pattern="\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}" required/>
                         </div>
 
                         <!-- Surgery Adress Section-->
@@ -125,17 +129,17 @@
 
                             <div class="inputbox" id="boxPadding">
                                 <label for="surgeryStreet">Surgery's Street </label>
-                                <input type="text" name="surgeryStreet" id="surgeryStreet" placeholder="Enter Surgery's Street" required/>
+                                <input type="text" name="surgeryStreet" id="surgeryStreet" value="<?php echo $surgeryStreet ?>" required/>
                             </div>
             
                             <div class="inputbox" id="boxPadding">   
                                 <label for="surgeryTown">Surgery's Town </label>
-                                <input type="text" name="surgeryTown" id="surgeryTown" placeholder="Enter Surgery's Town" required/>
+                                <input type="text" name="surgeryTown" id="surgeryTown" value="<?php echo $surgeryTown ?>" required/>
                             </div>
 
                             <div class="inputbox" id="boxPadding">   
                                 <label for="surgeryCounty">Surgery's County </label>
-                                <input type="text" name="surgeryCounty" id="surgeryCounty" placeholder="Enter Surgery's County" required/>
+                                <input type="text" name="surgeryCounty" id="surgeryCounty" value="<?php echo $surgeryCounty ?>" required/>
                             </div>
 
                         </section>
@@ -147,17 +151,17 @@
                             <h3>Home Address Information</h3>
                             <div class="inputbox" id="boxPadding">
                                 <label for="homeStreet">Home Street </label>
-                                <input type="text" name="homeStreet" id="homeStreet" placeholder="Enter Home Street" required/>
+                                <input type="text" name="homeStreet" id="homeStreet" value="<?php echo $homeStreet ?>" required/>
                             </div>
             
                             <div class="inputbox" id="boxPadding">   
                                 <label for="homeTown">Home Town </label>
-                                <input type="text" name="homeTown" id="homeTown" placeholder="Enter Home Town" required/>
+                                <input type="text" name="homeTown" id="homeTown" value="<?php echo $homeTown ?>" required/>
                             </div>
 
                             <div class="inputbox" id="boxPadding">   
                                 <label for="homeCounty">Home County </label>
-                                <input type="text" name="homeCounty" id="homeCounty" placeholder="Enter Home County" required/>
+                                <input type="text" name="homeCounty" id="homeCounty" value="<?php echo $homeCounty ?>" required/>
                             </div>
 
                         </section>
@@ -165,13 +169,43 @@
 
                     <!-- Action Buttons for the form-->
                     <div class="button">
-                        <input type="submit" name="submit" value="Update">
-                        <input id="right" type="reset" name="reset" value="Clear Form">
+                        <input type="button" onclick="onUpdate()" name="btn" value="Update">
+                        <input type="button" onclick="location.href='Amend_Doctor.html.php'" value="Return">
                     </div>
-
+                    <div id="confirmation" class="container">
+                        <div class="dialogBox">
+                            <section>
+                                <header class="dialogHeader">
+                                    <h2>Are you sure you want to update the Doctor table?</h2>
+                                </header>
+                                <section class="dialogContent">
+                                    <p>This action will be permanent</p>
+                                </section>
+                                <section class="dialogBottom">
+                                    <input type="button" onclick="onCancel()" name="close" value="Close">
+                                    <input type="submit" name="update" value="Update">
+                                </section>
+                            </section>
+                        </div>
+                    </div>
                 </form>
             </section>
         </main>
+        <script>
+            function onUpdate() {
+                let confirmation = document.getElementById("confirmation");
+
+                if (confirmation.classList.contains("open")) {
+                    confirmation.classList.add("open");
+                }
+            } 
+
+            function onCancel() {
+                let confirmation = document.getElementById("confirmation");
+
+                confirmation.classList.remove("open")
+            }
+        </script>
         <script src="../js.js"></script>
     </body>
 </html>
