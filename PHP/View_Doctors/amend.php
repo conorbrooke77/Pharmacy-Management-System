@@ -11,7 +11,7 @@
         while ($row = $result-> fetch_assoc()) {
             echo "<tr><td>" . $row["doctorID"] . "</td><td>" . $row["Surname"] . "</td><td>" . $row["Firstname"] . "</td><td>" . $row["SurgeryTelephoneNumber"] . "</td><td>" . $row["SurgeryMobileNumber"] . "</td><td>" . $row["HomeTelephoneNumber"] . "</td><td>" 
             . $row["SurgeryStreet"] . "</td><td>" . $row["SurgeryTown"] . "</td><td>" . $row["SurgeryCounty"] . "</td><td>" . $row["HomeStreet"] . "</td><td>" . $row["HomeTown"] . "</td><td>" . $row["HomeCounty"] . 
-            "</td><td id=\"editData\"><a id=\"editBtn\" href=\"Update.html.php\">Edit</a></td></tr>";
+            "</td><td id=\"editData\"><a id=\"editBtn\" href=\"Update.html.php?edit= $row[doctorID];\">Edit</a></td></tr>";
         }
     } else {
         echo "No Result";

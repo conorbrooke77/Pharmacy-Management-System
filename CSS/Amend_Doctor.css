@@ -40,11 +40,13 @@ tr:nth-child(even) {
 }
 
 #editData {
-    background-color: #1298ff;
-    border-radius: 6px;
+    text-align: center;
 }
 
 #editBtn {
+    background-color: #1298ff;
+    border-radius: 6px;
+    padding: 0.8em 1em 0.8em 1em;
     color: white;
     font-size: 18px;
     text-decoration: none;

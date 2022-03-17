@@ -80,10 +80,9 @@
                         </li>
                     </ul>
                 </nav>
-                
+                <?php include '../PHP/View_Doctors/edit.php'?>
                 <!-- Insert Form -->
                 <form class="Insert-Doctor" action="../PHP/Insert_Doctor/insert.php" method="Post">
-
                     <!-- Header Information-->
                     <div class="Form-Header">
                         <h2>Amend Doctor</h2>
@@ -94,7 +93,7 @@
                     <section class="Input-Content">
                         <div class="inputbox">
                             <label for="surname">Doctor's Surname </label>
-                            <input type="text" name="surname" id="surname" placeholder="Enter Surname" autofocus/>
+                            <input type="text" name="surname" id="surname" value="<?php echo $surname ?>"autofocus/>
                         </div>
         
                         <div class="inputbox">
