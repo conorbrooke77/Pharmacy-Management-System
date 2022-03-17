@@ -183,7 +183,7 @@
                                 </section>
                                 <section class="dialogBottom">
                                     <input type="button" onclick="onCancel()" name="close" value="Close">
-                                    <input type="submit" name="update" value="Update">
+                                    <input type="submit" id="updateBtn" name="update" value="Update">
                                 </section>
                             </section>
                         </div>
