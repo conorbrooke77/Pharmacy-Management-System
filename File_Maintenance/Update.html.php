@@ -5,7 +5,7 @@
         <link rel="Stylesheet" href="../CSS/main.css" />
         <link rel="Stylesheet" href="../CSS/fileMaintenance.css" />
         <link rel="Stylesheet" href="../CSS/Add_Doctor.css" />
-        <link rel="Stylesheet" href="../CSS/confirmation.css" />
+        <link rel="Stylesheet" href="../CSS/Confirmation.css" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +28,7 @@
                 <li><a class="mainNav" href="">Counter Sales</a></li>
                 <li><a class="mainNav" href="">Dispense Drugs</a></li>
                 <li><a class="mainNav" href="">Stock Control Menu</a></li>
-                <li><a class="mainNav" href="../Supplier Accounts/Payment_To_Suppliers.html">Suppliers Accounts Menu</a></li>
+                <li><a class="mainNav" href="../Supplier Accounts/Supplier_Accounts_Menu.html">Suppliers Accounts Menu</a></li>
                 <li class="active"><a class="mainNav" href="Add_Doctor.html">File Maintenance Menu</a></li>
                 <li><a class="mainNav" href="">Reports Menu</a></li>
                 <li id="closeWindow" ><a class="mainNav" href="">Exit</a></li>
@@ -58,7 +58,7 @@
                             <ul>
                                 <li><a href="Add_Doctor.html">Add Doctor</a></li>
                                 <li><a href="Amend_Doctor.html.php">Amend Doctor</a></li>
-                                <li><a href="Delete_Doctor.html">Delete Doctor</a></li>
+                                <li><a href="Delete_Doctor.html.php">Delete Doctor</a></li>
                             </ul>
                         </li>
                         <li class="outerLi" ><a href="">Drug</a>
@@ -95,6 +95,9 @@
 
                     <!-- All the input content of the form-->
                     <section class="Input-Content">
+
+                        <!--Hidden input field-->
+                        <input type="hidden" name="docID" value="<?php echo $docID ?>">
                         <div class="inputbox">
                             <label for="surname">Doctor's Surname </label>
                             <input type="text" name="surname" id="surname" value="<?php echo $surname ?>" autofocus/>
@@ -195,7 +198,7 @@
             function onUpdate() {
                 let confirmation = document.getElementById("confirmation");
 
-                if (confirmation.classList.contains("open")) {
+                if (!confirmation.classList.contains("open")) {
                     confirmation.classList.add("open");
                 }
             } 

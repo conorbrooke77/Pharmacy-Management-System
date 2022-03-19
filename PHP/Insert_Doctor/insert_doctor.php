@@ -40,8 +40,8 @@
         	        die ("an error in the sql query: " . mysqli_error($con) );
                 }
 
-            echo "<br>A record has been added for Doctor " . $_POST['firstname'] . " " . $_POST['surname'] . " with a unique ID of " . $doctorID;
-
+            echo "<br>A record has been added for Doctor " . $_POST['firstname'] . " " . $_POST['surname'] . " with a unique ID of "
+ . $doctorID;
             mysqli_close($con);
 
         ?>

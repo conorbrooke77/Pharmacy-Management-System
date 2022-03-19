@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <?php 
 
     session_start();
@@ -24,6 +23,7 @@
             $row = $result->fetch_array();
 
             //The variables for each entry in the Doctor table;
+            $docID = $row['doctorID'];
             $surname = $row['Surname'];
             $firstname = $row['Firstname'];
             $telephoneNumber = $row['SurgeryTelephoneNumber'];
@@ -37,9 +37,32 @@
             $homeCounty = $row['HomeCounty'];
         }
     }
-    
+
     if (isset($_POST['update'])) {
+        
         $_SESSION['message'] = "Record has been updated!";
+
+        $doctorID = $_POST['docID'];
+        $surname = $_POST['surname'];
+        $firstname = $_POST['firstname'];
+        $telephoneNumber = $_POST['telephoneNumber'];
+        $mobileNumber = $_POST['mobileNumber'];
+        $homeTelephone = $_POST['homeTelephone'];
+        $surgeryStreet = $_POST['surgeryStreet'];
+        $surgeryTown = $_POST['surgeryTown'];
+        $surgeryCounty = $_POST['surgeryCounty'];
+        $homeStreet = $_POST['homeStreet'];
+        $homeTown = $_POST['homeTown'];
+        $homeCounty = $_POST['homeCounty'];
+
+        $sql = "UPDATE Doctor SET Surname='$surname', Firstname='$firstname', SurgeryTelephoneNumber='$telephoneNumber', SurgeryMobileNumber='$mobileNumber', HomeTelephoneNumber='$homeTelephone', SurgeryStreet='$surgeryStreet', 
+        SurgeryTown='$surgeryTown', SurgeryCounty='$surgeryCounty', HomeStreet='$homeStreet', HomeTown='$homeTown', HomeCounty='$homeCounty' WHERE doctorID=$doctorID";
+
+        if (!mysqli_query($con,$sql))
+        {
+            die ("an error in the sql query: " . mysqli_error($con) );
+        }
+
 
         header("location: ../../File_Maintenance/Amend_Doctor.html.php");
     }

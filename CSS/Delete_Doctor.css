@@ -1,0 +1,16 @@
+#deleteData {
+    text-align: center;
+}
+
+#deleteBtn {
+    background-color: #ec1616;
+    border-radius: 6px;
+    border: none;
+    padding: 0.6em 0.8em 0.6em 0.8em;
+    color: white;
+    font-size: 18px;
+}
+
+#deleteBtn:hover{
+    background-color: #464851;
+}

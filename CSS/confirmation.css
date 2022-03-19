@@ -33,11 +33,25 @@
 	border-radius: 8px;
 	margin-top: 4em;
 }
-.dialogBottom input:hover {
-    background-color: #464851;
-}
 
 #updateBtn{
     margin-left: 1em;
     background-color: #f09f1d;
+}
+
+.dialogBottom input:hover {
+    background-color: #464851;
+}
+
+#updateBtn:hover{
+    background-color: #464851;
+}
+
+#delBtn {
+    margin-left: 1em;
+    background-color: #ec1616;
+}
+
+#delBtn:hover{
+    background-color: #464851;
 }

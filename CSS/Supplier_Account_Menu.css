@@ -1,0 +1,44 @@
+body {
+    background-color: #e8e8e8;
+}
+
+.menu {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.innerContent {
+    width: 30em;
+    height: 25em;
+    background-color: white;
+}
+
+.innerContent ul {
+    padding-left: 0px;
+    list-style: none;
+    margin-top: 5.5em;
+    text-align: center;
+}
+
+.innerContent li {
+    padding-bottom: 4em;
+}
+
+.innerContent a:hover {
+    color: #464851;
+}
+
+.supplierLink {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.innerContent h2 {
+    margin-top: 2em;
+    text-align: center;
+    font-size: 1.8em;
+}
