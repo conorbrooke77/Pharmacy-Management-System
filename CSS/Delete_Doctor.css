@@ -1,7 +1,22 @@
+
+/*
+
+StudentID: c00260735
+
+Name: Conor Brooke
+
+Date: 12/03/2022
+
+Purpose of file: This file is for extra CSS on the delete doctor page.
+
+*/
+
+
 #deleteData {
     text-align: center;
 }
 
+/* The CSS for the delete BTN in the table */
 #deleteBtn {
     background-color: #ec1616;
     border-radius: 6px;

@@ -1,12 +1,30 @@
+
+<!---
+
+StudentID: c00260735
+
+Name: Conor Brooke
+
+Date: 15/03/2022
+
+Name of screen: Update Doctor
+
+Purpose of Screen: This screen is an extension page of the Amend screen and allows users to update the Doctors entry data.
+
+-->
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Pharma Technology | Add Doctor</title>
+        <title>Pharma Technology | Update Doctor</title>
+
+        <!-- This Screen uses multiple CSS files to create it's style -->
         <link rel="Stylesheet" href="../CSS/main.css" />
         <link rel="Stylesheet" href="../CSS/fileMaintenance.css" />
         <link rel="Stylesheet" href="../CSS/Add_Doctor.css" />
         <link rel="Stylesheet" href="../CSS/Confirmation.css" />
 
+        <!-- Fonts added to the page -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
@@ -195,6 +213,7 @@
             </section>
         </main>
         <script>
+            // If you click the Update Btn, this method will add the class open to the dialog box making it display.
             function onUpdate() {
                 let confirmation = document.getElementById("confirmation");
 
@@ -203,6 +222,7 @@
                 }
             } 
 
+            // This box removes the open class return the user back to the origanal page.
             function onCancel() {
                 let confirmation = document.getElementById("confirmation");
 

@@ -1,6 +1,9 @@
+
 <!DOCTYPE html>
 
 <?php
+
+    // Database Connection
 
     $hostname = "localhost:3306";
     $username = "pharmacy";

@@ -1,3 +1,18 @@
+
+/*
+
+StudentID: c00260735
+
+Name: Conor Brooke
+
+Date: 14/03/2022
+
+Purpose of file: This file is for the CSS of the Confirmation Dialog Box.
+
+*/
+
+
+/* The Confirmation Container. This box has a high z-index to be above all other elements when dispplayed */
 .container {
     z-index: 15;
     position: fixed;
@@ -10,6 +25,7 @@
     justify-content: center;
 }
 
+/* When added on in JS the box is displayed */
 .open {
     display: flex;
 }
@@ -34,6 +50,7 @@
 	margin-top: 4em;
 }
 
+/* This is the call to action btn that updates the DB */
 #updateBtn{
     margin-left: 1em;
     background-color: #f09f1d;
@@ -47,6 +64,7 @@
     background-color: #464851;
 }
 
+/* This is the call to action btn that deletes an entry */
 #delBtn {
     margin-left: 1em;
     background-color: #ec1616;

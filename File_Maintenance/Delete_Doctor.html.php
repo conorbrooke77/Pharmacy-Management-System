@@ -1,13 +1,31 @@
+
+<!---
+
+StudentID: c00260735
+
+Name: Conor Brooke
+
+Date: 17/03/2022
+
+Name of screen: Delete Doctor
+
+Purpose of Screen: The purpose of this screen is displaying all Doctors from the Doctor DB that can be deleted.
+
+-->
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Pharma Technology | Delete Doctor</title>
+
+        <!-- This Screen uses multiple CSS files to create it's style -->
         <link rel="Stylesheet" href="../CSS/main.css" />
         <link rel="Stylesheet" href="../CSS/fileMaintenance.css" />
         <link rel="Stylesheet" href="../CSS/Amend_Doctor.css" />
         <link rel="Stylesheet" href="../CSS/Delete_Doctor.css" />
         <link rel="Stylesheet" href="../CSS/Confirmation.css" />
 
+        <!-- Fonts added to the page -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
@@ -98,13 +116,16 @@
                 ---->
                 <?php //endif ?>
 
+                <!-- Section for all the deletable Content -->
                 <section class="view">
                     <header>
                         <h2>Delete Doctors</h2>
                         <p>To Delete any Doctor's in the list below click on the delete button.</p>
                     </header>
+                    <!-- Table to display all entrys in the Doctor table that haven't been flagged -->
                     <section class="table">
                         <table>
+                            <!-- Table Headers -->
                             <tr>
                                 <th>Doctor ID</th>
                                 <th>Surname</th>
@@ -120,11 +141,15 @@
                                 <th>Home County</th>
                                 <th>Amend</th>
                             </tr>
+                            <!-- Table Content -->
+                            <!-- This PHP file loads all the <td> into the table -->
                             <?php include '../PHP/Delete_Doctors/list.php' ?>
                         </table>
                     </section>
                 </section>
             </section>
+            
+            <!-- The Confirmation Dialog Box -->
             <div id="confirmation" class="container">
                         <div class="dialogBox">
                             <section>
@@ -134,9 +159,12 @@
                                 <section class="dialogContent">
                                     <p>This action will be permanent</p>
                                 </section>
+                                <!-- Form for the buttons to able to be posted. Loads the delete php file -->
                                 <form class="dialogBottom" action="../PHP/Delete_Doctors/delete.php" method="Post">
                                     
+                                    <!-- Cancel BTN that returns to page -->
                                     <input type="button" onclick="onCancel()" name="close" value="Close">
+                                    <!-- Submit BTN that flags entry as deleted -->
                                     <input type="submit" id="delBtn" name="delete" value="Delete">
                                 </form>
                             </section>
@@ -144,6 +172,7 @@
             </section>
         </main>
         <script>
+            // If you click the first delete bnt in the table, this method will add the class open to the dialog box making it display.
             function onDelete() {
                 let confirmation = document.getElementById("confirmation");
 
@@ -152,6 +181,7 @@
                 }
             } 
 
+            // This box removes the open class return the user back to the origanal page.
             function onCancel() {
                 let confirmation = document.getElementById("confirmation");
 

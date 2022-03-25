@@ -1,3 +1,16 @@
+
+<!---
+
+StudentID: c00260735
+
+Name: Conor Brooke
+
+Date: 15/03/2022
+
+Purpose of Script: This PHP script includes the functionality needed to Update a specific Doctor from the Doctor table.
+
+-->
+
 <!DOCTYPE html>
 <?php 
 
@@ -18,7 +31,7 @@
         {
             die ("an error in the sql query: " . mysqli_error($con) );
         }
-
+        //Run through each row and fetch the data
         if ($result->num_rows){
             $row = $result->fetch_array();
 
@@ -37,7 +50,7 @@
             $homeCounty = $row['HomeCounty'];
         }
     }
-
+    //If the Update btn is clicked update data in Doctor table
     if (isset($_POST['update'])) {
         
         $_SESSION['message'] = "Record has been updated!";
@@ -63,7 +76,7 @@
             die ("an error in the sql query: " . mysqli_error($con) );
         }
 
-
+        //Load the header to confirm the update was successful and return to amend page
         header("location: ../../File_Maintenance/Amend_Doctor.html.php");
     }
 ?>

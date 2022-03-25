@@ -1,11 +1,29 @@
+
+<!---
+
+StudentID: c00260735
+
+Name: Conor Brooke
+
+Date: 28/02/2022
+
+Name of screen: Add Doctor
+
+Purpose of Screen: The purpose of this screen is inserting Doctors to the Doctor DB.
+
+-->
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Pharma Technology | Add Doctor</title>
+
+        <!-- This Screen uses multiple CSS files to create it's style -->
         <link rel="Stylesheet" href="../CSS/main.css" />
         <link rel="Stylesheet" href="../CSS/fileMaintenance.css" />
         <link rel="Stylesheet" href="../CSS/Add_Doctor.css" />
 
+        <!-- Fonts added to the page -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
@@ -14,6 +32,7 @@
     <body>
         <!-- Nav Bar template-->
         <nav class="sideBar">
+            <!-- The Header of the page. Includes projects Title and Logo-->
             <header>
                 <div class="logoContainer">
                     <img src="../Resources/logoV2.png" width="250" height="150"/>
@@ -30,6 +49,7 @@
                 <li id="closeWindow" ><a class="mainNav" href="">Exit</a></li>
             </ul>
         </nav>
+        <!-- Top Nav Bar -->
         <nav class="navBar">
             <div class="profileContainer">
                 <img src="../Resources/profile-icon.png" width="50" height="50"/>
@@ -41,6 +61,7 @@
         <main>
             <section class="content">
                 <nav class="innerMenu">
+                    <!-- Outter Ul -->
                     <ul class="outerUl">
                         <!-- Inner Drop Down Menu-->
                         <li class="outerLi"><a href="">Customer</a>
@@ -166,6 +187,7 @@
 
                     <!-- Action Buttons for the form-->
                     <div class="button">
+                        <!-- Submit btn for inserting data to the Doctor table-->
                         <input type="submit" name="submit" value="Submit">
                         <input id="right" type="reset" name="reset" value="Clear Form">
                     </div>
@@ -173,6 +195,7 @@
                 </form>
             </section>
         </main>
+        <!-- Js Script for Exit btn-->
         <script src="../js.js"></script>
     </body>
 </html>

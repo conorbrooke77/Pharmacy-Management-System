@@ -1,4 +1,18 @@
 
+/*
+
+StudentID: c00260735
+
+Name: Conor Brooke
+
+Date: 29/02/2022
+
+Purpose of file: This file is for the CSS of the Insert Doctor Screen.
+
+*/
+
+
+/* Designed a grid layout to align the content in the center */
 body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -12,11 +26,13 @@ body {
     grid-column: 2/3;
 }
 
+/* Custimizing the inserted successful page*/
 .phpH3 {
     color: green;
 	font-size: 1.8em;
 }
 
+/* The CSS for each input in the table*/
 input {
 	margin-top: 5em;
 	border: none;

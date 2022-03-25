@@ -1,7 +1,23 @@
+
+/*
+
+StudentID: c00260735
+
+Name: Conor Brooke
+
+Date: 04/03/2022
+
+Purpose of file: This file is for the CSS of the Amend Doctor page.
+
+*/
+
+
+/* Allowing the ability to scroll to the left and right of the page */
 body {
     overflow-x: scroll;
 }
 
+/* Increasing total page width to fit all the content */
 .content {
     width: 115vw;
 }
@@ -16,6 +32,7 @@ h2 {
     padding-bottom: 0.6em;
 }
 
+/* Doctor table */
 .table {
     margin: 4em 2em 0 2em;
 }
@@ -30,11 +47,13 @@ table {
 	text-align: left;
 }
 
+/* Customizing tables header */
 th {
 	background-color: #4db1eb;
 	color: white;
 }
 
+/* Every second input in the table gets a different coloured background for a unique style */
 tr:nth-child(even) {
 	background-color: #ededed;
 }
@@ -52,6 +71,7 @@ tr:nth-child(even) {
     text-decoration: none;
 }
 
+/* This runs if a entry in the table has been successfully updated. */
 .alert {
     display: flex;
     justify-content: center;

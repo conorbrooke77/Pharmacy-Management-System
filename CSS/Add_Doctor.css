@@ -1,3 +1,18 @@
+
+/*
+
+StudentID: c00260735
+
+Name: Conor Brooke
+
+Date: 01/03/2022
+
+Purpose of file: This file is for the CSS of the Add Doctor page.
+
+*/
+
+
+/* The Doctor Form CSS */
 .Insert-Doctor {
     display: grid;
     grid-template-rows: 1.1fr 9fr 2fr;
@@ -5,18 +20,21 @@
     padding: 1em 0 0 0;
 }
 
+/* Spacing the inputs within the form */
 .Input-Content {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
+/* Customizing the address sections to have extra padding */
 .Address-Sections {
     display: flex;
     flex-direction: column;
     padding: 4em 0 2em 0;
 }
 
+/* Inputs */
 .inputbox {
     display: flex;
     align-items: center;
@@ -36,10 +54,12 @@
     font-size: 14px;
 }
 
+/* Inputs within the address section*/
 #boxPadding {
     padding-left: 1.5em;
 }
 
+/* Header for form*/
 .Form-Header h2{
     color: #0a0a0a;
     font-size: 2.3em;
@@ -65,6 +85,7 @@
     font-size: 17px;
 }
 
+/* Moving the Clear BTN in the form over to the right */
 #right {
     margin-left: 2em;
 }

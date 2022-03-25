@@ -1,7 +1,22 @@
+
+/*
+
+StudentID: c00260735
+
+Name: Conor Brooke
+
+Date: 18/03/2022
+
+Purpose of file: This file is for the CSS of the Supplier account menu.
+
+*/
+
+
 body {
     background-color: #e8e8e8;
 }
 
+/* Centering the Menu */
 .menu {
     height: 75vh;
     display: flex;
@@ -16,6 +31,7 @@ body {
     background-color: white;
 }
 
+/* Centering the text */
 .innerContent ul {
     padding-left: 0px;
     list-style: none;
@@ -31,6 +47,7 @@ body {
     color: #949494;
 }
 
+/* Customizing link */
 .supplierLink {
     text-decoration: none;
     color: black;
