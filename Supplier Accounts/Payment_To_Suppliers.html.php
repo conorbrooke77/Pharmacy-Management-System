@@ -3,6 +3,7 @@
     <head>
         <title>Pharma Technology | Supplier Account Menu</title>
         <link rel="Stylesheet" href="../CSS/main.css" />
+        <link rel="Stylesheet" href="../CSS/Pay_Supplier.css" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,9 +39,82 @@
         <!-- Main functionality and content -->
         <main>
             <section class="content">
-                <h2> 
+                <section class="paymentsPage">
+                    
+                    <header id="paymentHeader">
+                        <h2>Payments To Suppliers</h2>
+                        <p>Choose a Supplier from the List below to view all invoices.</p>
+                    </header>
+
+                    <div id="listboxContainer">
+                        <?php include '../PHP/Supplier_Payments/listbox.php' ?>
+        
+                        <p id="addressText"></p>
+                    </div>
+
+                    <section class="supplierContent">
+                        
+                        <h3>List of all Suppliers invoices</h3>
+
+                        <div id="supplierList">
+                            
+                        </div>
+
+                        <form action="Letter_To_Supplier.html.php" method="Post">
+                            <div class="button">
+                                <input type="hidden" id="supplierID" name="id" >
+                                <input type="submit" onclick="sendDetails()" name="submit" value="Process Payment">
+                            </div>
+                        </form>
+                    </section>
+                </section>
             </section>
         </main>
+        <script>
+
+            function loadDetails() {
+
+                var box = document.getElementById("supplierList");
+                box.innerHTML = '';
+
+                var sel = document.getElementById("listbox");
+                var result = sel.options[sel.selectedIndex].value;
+                var SupplierDetails = result.split(',');
+
+                var id = document.getElementById("supplierID");
+
+                id.value = SupplierDetails[0]
+
+                document.getElementById("addressText").innerText = "The Suppliers Address is " + SupplierDetails[2] + ", " + SupplierDetails[3] + ", " + SupplierDetails[4];
+
+                var count = 5;
+
+                while ( count < SupplierDetails.length-1) {
+
+					if ((count+1) % 2 === 0) {
+						
+                        var invoice = document.createElement("p");
+                        var amount = document.createElement("p");
+
+                        invoice.innerText = "Supplier Invoice Reference: " + SupplierDetails[count];
+                        amount.innerText = "Supplier Invoice Amount: " + SupplierDetails[count+1];
+
+                        document.getElementById("supplierList").appendChild(invoice);
+                        document.getElementById("supplierList").appendChild(amount);
+
+					}
+                    count++;
+                    
+                    console.log(count);
+                }
+            }
+
+            function sendDetails() {
+
+
+            }
+
+        </script>
         <script src="../js.js"></script>
     </body>
 </html>

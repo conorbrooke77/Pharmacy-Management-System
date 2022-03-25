@@ -1,30 +1,52 @@
-<?php
+<?php 
+	  include 'db.inc.php';
+	  
+	  $sql = "SELECT * FROM Supplier";
 
-    include "db.inc.php"; //Connection
+	  if(!$result = mysqli_query($con,$sql))
+	  {
+		  die('Error in querying the database'.mysqli_error($con));
+	  }
 
-    $sql = "SELECT * FROM Supplier";
+	  $join = "SELECT * FROM Supplier_Invoice";
 
-    if (!$result = mysqli_query($con, $sql)) {
+	  if(!$joins = mysqli_query($con,$join))
+	  {
+		  die('Error in querying the database'.mysqli_error($con));
+	  }
+	  
+	  echo "<br><select name ='listbox' id ='listbox' onclick='loadDetails()' >";
+	  
+	  while ($row = mysqli_fetch_array($result))
+	  {
 
-        die('Error in querying the database' . mysqli_error($con));
-    }
+		  $id = $row['supplier_id'];
+		  $name = $row['supplier_name'];
+		  $street = $row['street'];
+		  $town= $row['town'];
+		  $county = $row['county'];
 
-    echo "<br><select name='listbox' id='listbox' onclick='populate()'>";
+		  $allText = "$id,$name,$street,$town,$county,";
+		  while ($row = mysqli_fetch_array($joins)) {
 
-    while ($row = mysqli_fetch_array($result)) {
-        $supplierID = $row['supplier_id'];
-        $supplier_name = $row['supplier_name'];
-        $street = $row['street'];
-        $town = $row['town'];
-        $county = $row['county'];
-        $email_address = $row['email_address'];
-        $website_address = $row['website_address'];
-        $telephone_number = $row['telephone_number'];
+			if ($id == $row['Supplier_Invoice_Ref']) {
+				
+				$Supplier_Invoice_Id= $row['Supplier_Invoice_Id'];
+				$Amount = $row['Amount'];
 
-        $allText = "$supplierID, $supplier_name, $street, $town, $county, $email_address, $website_address, $telephone_number";
+				global $allText;
+				$allText .= "$Supplier_Invoice_Id,$Amount,";
+			}
+		  }
 
-        echo "<option value='$allText'> $supplier_name </option>";
-    }
+		  echo"<option value = '$allText'>$name</option>";
+		  
+	  }
 
-    echo "</select>";
+	  echo "</select>";
+
+
+	  mysqli_close($con);
 ?>
+	  
+	  

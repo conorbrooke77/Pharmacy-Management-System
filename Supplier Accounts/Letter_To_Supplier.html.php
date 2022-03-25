@@ -18,7 +18,7 @@ Purpose of Screen: The purpose of this screen is displaying the Supplier Account
     <head>
         <title>Pharma Technology | Counter Sales</title>
         <link rel="Stylesheet" href="../CSS/main.css" />
-        <link rel="Stylesheet" href="../CSS/Supplier_Account_Menu.css" />
+        <link rel="Stylesheet" href="../CSS/Letter.css" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,16 +54,17 @@ Purpose of Screen: The purpose of this screen is displaying the Supplier Account
         <!-- Main functionality and content -->
         <main>
             <section class="content">
-                <section class="menu">
-                    <section class="innerContent">
-                        <h2>Supplier Accounts Menu</h2>
 
-                        <ul class="supplierMenu">
-                            <li><a class="supplierLink" href="New_Invoices_From_Suppliers.html">New Invoices from Suppliers</a></li>
-                            <li><a class="supplierLink" href="Payment_To_Suppliers.html.php">Payments To Suppliers</a></li>
-                        </ul>
+                    <h2>Letter To Supplier</h2>
+                    <section class="letter">
+                        <div id="companyAddress">
+                            <p>PharmaTech Pharmacy,</p>
+                            <p>Low Street,</p>
+                            <p>Laois,</p>
+                            <p>03/04/2022</p>
+                        </div>
+                        <?php include '../PHP/Supplier_Payments/loadInvoice.php' ?>
                     </section>
-                </section>
             </section>
         </main>
         <script src="../js.js"></script>

@@ -1,0 +1,27 @@
+.content {
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    font-size: 2em;
+}
+
+.letter {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: solid 1px black;
+    width: 60em;
+    padding: 2em;;
+}
+
+#companyAddress {
+    text-align: right;
+    margin-left: auto;
+}
