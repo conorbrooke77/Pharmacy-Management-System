@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Pharma Technology | Counter Sales</title>
+        <title>Pharma Technology | Supplier Account Menu</title>
         <link rel="Stylesheet" href="../CSS/main.css" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +38,7 @@
         <!-- Main functionality and content -->
         <main>
             <section class="content">
-                
+                <h2> 
             </section>
         </main>
         <script src="../js.js"></script>

@@ -13,8 +13,8 @@
             . $row["SurgeryStreet"] . "</td><td>" . $row["SurgeryTown"] . "</td><td>" . $row["SurgeryCounty"] . "</td><td>" . $row["HomeStreet"] . "</td><td>" . $row["HomeTown"] . "</td><td>" . $row["HomeCounty"] . 
             "</td><td id=\"deleteData\">
                                         <iframe name=\"votar\" style=\"display:none;\"></iframe>
-                                        <form method=\"Post\" action=\"../PHP/Delete_Doctors/delete.php\" target=\"votar\">
-                                            <button onclick=\"onDelete()\" name=\"id\" value=\"<?php echo $row[doctorID];?>\"  id=\"deleteBtn>Delete</button>
+                                        <form method=\"Post\" action=\"Delete_Doctor.html.php\" target=\"votar\">
+                                            <button onclick=\"onDelete()\" type=\"submit\" name=\"docId\" value=\"<?php echo $row[doctorID];?>\"  id=\"deleteBtn\">Delete</button>
                                         </form>
                                     </td>
                                 </tr>";

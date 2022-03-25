@@ -135,6 +135,7 @@
                                     <p>This action will be permanent</p>
                                 </section>
                                 <form class="dialogBottom" action="../PHP/Delete_Doctors/delete.php" method="Post">
+                                    
                                     <input type="button" onclick="onCancel()" name="close" value="Close">
                                     <input type="submit" id="delBtn" name="delete" value="Delete">
                                 </form>

@@ -3,7 +3,7 @@ body {
 }
 
 .menu {
-    height: 80vh;
+    height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,7 +28,7 @@ body {
 }
 
 .innerContent a:hover {
-    color: #464851;
+    color: #949494;
 }
 
 .supplierLink {
