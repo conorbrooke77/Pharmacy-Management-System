@@ -93,14 +93,17 @@
 
 					if ((count+1) % 2 === 0) {
 						
+                        var lineBreak = document.createElement("br");
                         var invoice = document.createElement("p");
                         var amount = document.createElement("p");
 
                         invoice.innerText = "Supplier Invoice Reference: " + SupplierDetails[count];
                         amount.innerText = "Supplier Invoice Amount: " + SupplierDetails[count+1];
 
+                        document.getElementById("supplierList").appendChild(lineBreak);
                         document.getElementById("supplierList").appendChild(invoice);
                         document.getElementById("supplierList").appendChild(amount);
+                        document.getElementById("supplierList").appendChild(lineBreak);
 
 					}
                     count++;

@@ -18,7 +18,7 @@ Purpose of Script: This PHP script includes the functionality needed to Display 
     include 'db.inc.php';
 
     // Selects all data from the Doctor table
-    $sql = "SELECT * FROM Doctor";
+    $sql = "SELECT * FROM Doctor WHERE Deleted = 0";
 
     $result = $con->query($sql);
 

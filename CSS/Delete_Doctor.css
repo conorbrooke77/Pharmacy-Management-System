@@ -29,3 +29,12 @@ Purpose of file: This file is for extra CSS on the delete doctor page.
 #deleteBtn:hover{
     background-color: #464851;
 }
+
+th {
+    background-color: #f24646;
+}
+
+.deleteAlert {
+    background-color: #f05959;
+    color: #630909;
+}

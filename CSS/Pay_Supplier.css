@@ -34,6 +34,30 @@ input:hover {
     background-color: #464851;
 }
 
+p {
+    font-size: 17px;
+}
+ 
 #hide {
     display: none;
 }
+
+#listboxContainer p {
+    margin-top: 2em;
+}
+
+#listbox {
+    width: 6em;
+    padding: 0.2em;
+    font-size: 17px;
+}
+
+.supplierContent h3{ 
+    margin-bottom: 3em;;
+}
+
+#supplierList {
+    margin-left: 2em;
+}
+
+

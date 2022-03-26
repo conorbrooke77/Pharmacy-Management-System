@@ -3,7 +3,7 @@
 <?php 
     include 'db.inc.php';
 
-    $sql = "SELECT * FROM Doctor";
+    $sql = "SELECT * FROM Doctor WHERE Deleted = 0";
 
     $result = $con->query($sql);
 
@@ -14,7 +14,7 @@
             "</td><td id=\"deleteData\">
                                         <iframe name=\"votar\" style=\"display:none;\"></iframe>
                                         <form method=\"Post\" action=\"Delete_Doctor.html.php\" target=\"votar\">
-                                            <button onclick=\"onDelete()\" type=\"submit\" name=\"docId\" value=\"<?php echo $row[doctorID];?>\"  id=\"deleteBtn\">Delete</button>
+                                            <button onclick=\"onDelete(this.value)\" type=\"submit\" name=\"docId\" value=\"$row[doctorID]\"  id=\"deleteBtn\">Delete</button>
                                         </form>
                                     </td>
                                 </tr>";

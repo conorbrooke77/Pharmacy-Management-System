@@ -1,3 +1,5 @@
+
+<link rel="Stylesheet" href="../CSS/Letter.css" />
 <?php 
 	  include 'db.inc.php';
 	  
@@ -13,7 +15,7 @@
             die('Error in querying the database'.mysqli_error($con));
         }
   
-        $join = "SELECT * FROM Supplier_Invoice WHERE Supplier_Invoice_Ref=$supplierId";
+        $join = "SELECT * FROM Supplier_Invoice WHERE (Supplier_Invoice_Ref=$supplierId AND Deleted=0)";
   
         if(!$joins = mysqli_query($con,$join))
         {
@@ -38,13 +40,14 @@
             echo "</div>";
 
             echo "<br>";
-            global $totalAmount;
-            echo "<p>Enclosed please find the cheque for " . $totalAmount. " in payment of the following invoices: </p>";
+            echo "<p>Enclosed please find the cheque for the payment of the following invoices: </p>";
             echo "<br>";
-  
-            echo "<h4>Your Invoice References </h4>";
             
-            echo "<div id=\"invoices\">";
+            echo "<div class=\"innerSection\">";
+
+            echo "<div class=\"invoices\">";
+            echo "<h4>Your Invoice References </h4>";
+            echo "<br>";
             while ($row = mysqli_fetch_array($joins)) {
   
               if ($id == $row['Supplier_Invoice_Ref']) {
@@ -55,12 +58,12 @@
               }
             }
             echo "</div>";
-
-            echo "<h4>Your Invoice Amount </h4>";
             
             mysqli_data_seek($joins, 0);
 
-            echo "<div id=\"amount\">";
+            echo "<div class=\"invoices\">";
+            echo "<h4>Your Invoice Amount </h4>";
+            echo "<br>";
             while ($row = mysqli_fetch_array($joins)) {
   
               if ($id == $row['Supplier_Invoice_Ref']) {
@@ -76,11 +79,32 @@
             }
             echo "</div>";
             
-            echo "Total Amount " . $totalAmount;
+            echo "</div>";
+            
+            echo "<h4 id=\"amount\">Total Amount " . $totalAmount . "</h4>";
+            echo "<div class=\"bottomSection\">";
 
-            echo "Yours sincerely";
-            echo $name;
-            echo "Pharmacist";
+            echo "<p>Yours sincerely, </p>";
+            echo "<p>" . $name . "</p>";
+            echo "<p> Pharmacist</p>";
+            echo "</div>";
+
+            $join = "UPDATE Supplier_Invoice SET Deleted=1 WHERE Supplier_Invoice_Ref=$supplierId";
+  
+            if(!$joins = mysqli_query($con,$join))
+              {
+                die('Error in querying the database'.mysqli_error($con));
+              }
+
+              if ($totalAmount > 0) {
+                $total = "INSERT INTO Payment (Amount) VALUES ('$totalAmount')";
+  
+                if(!$totals = mysqli_query($con,$total))
+                  {
+                    die('Error in querying the database'.mysqli_error($con));
+                  }
+              }
+
         }
   
       }

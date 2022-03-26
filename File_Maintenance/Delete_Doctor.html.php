@@ -32,6 +32,8 @@ Purpose of Screen: The purpose of this screen is displaying all Doctors from the
         <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&display=swap" rel="stylesheet">
     </head>
     <body>
+        <?php include '../PHP/Delete_Doctors/delete.php'; ?>
+
         <!-- Nav Bar template-->
         <nav class="sideBar">
             <header>
@@ -99,22 +101,23 @@ Purpose of Screen: The purpose of this screen is displaying all Doctors from the
                         </li>
                     </ul>
                 </nav>
-                <!-- Header Message for confirmation of successful update-->
-                <!----
+                <!-- Header Message for confirmation of successful Deletion-->
+                
                 <?php
-                    //include '../PHP/View_Doctors/edit.php';
 
-                    //if(isset($_SESSION['message'])):
+                    if(isset($_SESSION['message'])):
                 ?>
-                <div class="alert">
+
+                <!--Creates a alert div at the top of the amend page-->
+                <div class="deleteAlert">
                     <?php 
                         //Loads message from edit file
-                        //echo $_SESSION['message'];
-                        //($_SESSION['message']);
+                        echo $_SESSION['message'];
+                        unset($_SESSION['message']);
                     ?>
                 </div>
-                ---->
-                <?php //endif ?>
+                    
+                <?php endif ?>
 
                 <!-- Section for all the deletable Content -->
                 <section class="view">
@@ -165,6 +168,8 @@ Purpose of Screen: The purpose of this screen is displaying all Doctors from the
                                     <!-- Cancel BTN that returns to page -->
                                     <input type="button" onclick="onCancel()" name="close" value="Close">
                                     <!-- Submit BTN that flags entry as deleted -->
+                                    
+                                    <input type="hidden" id="hiddenId" name="hiddenId">
                                     <input type="submit" id="delBtn" name="delete" value="Delete">
                                 </form>
                             </section>
@@ -173,7 +178,11 @@ Purpose of Screen: The purpose of this screen is displaying all Doctors from the
         </main>
         <script>
             // If you click the first delete bnt in the table, this method will add the class open to the dialog box making it display.
-            function onDelete() {
+            function onDelete(clicked_value) {
+
+                document.getElementById("hiddenId").value = clicked_value;
+
+                console.log("doctorID");
                 let confirmation = document.getElementById("confirmation");
 
                 if (!confirmation.classList.contains("open")) {

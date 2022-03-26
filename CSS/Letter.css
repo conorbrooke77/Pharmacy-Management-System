@@ -7,7 +7,6 @@
 }
 
 h2 {
-    margin-top: 1em;
     margin-bottom: 2em;
     font-size: 2em;
 }
@@ -17,11 +16,38 @@ h2 {
     flex-direction: column;
     width: 100%;
     border: solid 1px black;
-    width: 60em;
+    width: 50em;
     padding: 2em;;
 }
 
 #companyAddress {
     text-align: right;
     margin-left: auto;
+}
+
+#supplierAdd {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.innerSection {
+    margin-top: 3em;
+    margin-right: 15em;
+    display: flex;
+    justify-content:space-around;
+    flex-direction: row;
+}
+
+p {
+    font-size: 17px;
+}
+
+.bottomSection {
+    margin-top: 3em;
+    text-align: right;
+    margin-left: auto;
+}
+
+#amount {
+    margin-top: 3em;
 }

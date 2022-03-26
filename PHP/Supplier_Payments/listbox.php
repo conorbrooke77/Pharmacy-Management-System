@@ -8,7 +8,7 @@
 		  die('Error in querying the database'.mysqli_error($con));
 	  }
 
-	  $join = "SELECT * FROM Supplier_Invoice";
+	  $join = "SELECT * FROM Supplier_Invoice WHERE Deleted=0";
 
 	  if(!$joins = mysqli_query($con,$join))
 	  {
@@ -38,7 +38,7 @@
 				$allText .= "$Supplier_Invoice_Id,$Amount,";
 			}
 		  }
-
+		  mysqli_data_seek($joins, 0);
 		  echo"<option value = '$allText'>$name</option>";
 		  
 	  }
