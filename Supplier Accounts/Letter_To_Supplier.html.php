@@ -63,10 +63,11 @@ Purpose of Screen: The purpose of this screen is displaying the Supplier Account
                             <p>Laois,</p>
                             <p>03/04/2022</p>
                         </div>
+                        <!-- PHP file to load all invoice details -->
                         <?php include '../PHP/Supplier_Payments/loadInvoice.php' ?>
                     </section>
             </section>
         </main>
-        <script src="../js.js"></script>
+        <script src="../Exit.js"></script>
     </body>
 </html>

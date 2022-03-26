@@ -7,7 +7,8 @@
 
         $totalAmount;
         $supplierId = $_POST['id'];
-        
+      
+        //Selects the Supplier Id that equals the Post Id
         $sql = "SELECT * FROM Supplier WHERE supplier_id=$supplierId";
 
         if(!$result = mysqli_query($con,$sql))
@@ -15,6 +16,7 @@
             die('Error in querying the database'.mysqli_error($con));
         }
   
+        //Selects the Invoices that are Referencing the Supplier above and aren't deleted
         $join = "SELECT * FROM Supplier_Invoice WHERE (Supplier_Invoice_Ref=$supplierId AND Deleted=0)";
   
         if(!$joins = mysqli_query($con,$join))
@@ -59,6 +61,7 @@
             }
             echo "</div>";
             
+            //Clears the Joins result to reload from the start of the Table.
             mysqli_data_seek($joins, 0);
 
             echo "<div class=\"invoices\">";
@@ -89,6 +92,7 @@
             echo "<p> Pharmacist</p>";
             echo "</div>";
 
+            //After payment delete the invoice
             $join = "UPDATE Supplier_Invoice SET Deleted=1 WHERE Supplier_Invoice_Ref=$supplierId";
   
             if(!$joins = mysqli_query($con,$join))
@@ -97,6 +101,7 @@
               }
 
               if ($totalAmount > 0) {
+                //If the Payment is valid insert total into the Payments table
                 $total = "INSERT INTO Payment (Amount) VALUES ('$totalAmount')";
   
                 if(!$totals = mysqli_query($con,$total))

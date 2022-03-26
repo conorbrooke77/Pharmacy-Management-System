@@ -180,6 +180,7 @@ Purpose of Screen: The purpose of this screen is displaying all Doctors from the
             // If you click the first delete bnt in the table, this method will add the class open to the dialog box making it display.
             function onDelete(clicked_value) {
 
+                //Change the value of the hidden input to the Doctor Id before postint the value
                 document.getElementById("hiddenId").value = clicked_value;
 
                 console.log("doctorID");
@@ -197,6 +198,6 @@ Purpose of Screen: The purpose of this screen is displaying all Doctors from the
                 confirmation.classList.remove("open")
             }
         </script>
-        <script src="../js.js"></script>
+        <script src="../Exit.js"></script>
     </body>
 </html>

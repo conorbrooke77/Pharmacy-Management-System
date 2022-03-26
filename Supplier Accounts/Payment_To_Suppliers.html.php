@@ -47,6 +47,7 @@
                     </header>
 
                     <div id="listboxContainer">
+                        <!-- PHP Script to load the listbox with all the Supplier data-->
                         <?php include '../PHP/Supplier_Payments/listbox.php' ?>
         
                         <p id="addressText"></p>
@@ -56,10 +57,12 @@
                         
                         <h3>List of all Suppliers invoices</h3>
 
+                        <!-- All the suppliers invoices-->
                         <div id="supplierList">
                             
                         </div>
 
+                        <!-- Post of invoices to Letter-->
                         <form action="Letter_To_Supplier.html.php" method="Post">
                             <div class="button">
                                 <input type="hidden" id="supplierID" name="id" >
@@ -74,6 +77,7 @@
 
             function loadDetails() {
 
+                //Clears previous invoices
                 var box = document.getElementById("supplierList");
                 box.innerHTML = '';
 
@@ -83,12 +87,15 @@
 
                 var id = document.getElementById("supplierID");
 
+                //Gets the Supplier ID
                 id.value = SupplierDetails[0]
 
+                //Prints the Suppliers Address
                 document.getElementById("addressText").innerText = "The Suppliers Address is " + SupplierDetails[2] + ", " + SupplierDetails[3] + ", " + SupplierDetails[4];
 
                 var count = 5;
 
+                //Loads all the invoices associated to the Supplier Id
                 while ( count < SupplierDetails.length-1) {
 
 					if ((count+1) % 2 === 0) {
@@ -112,12 +119,7 @@
                 }
             }
 
-            function sendDetails() {
-
-
-            }
-
         </script>
-        <script src="../js.js"></script>
+        <script src="../Exit.js"></script>
     </body>
 </html>

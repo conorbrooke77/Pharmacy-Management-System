@@ -153,6 +153,6 @@ Purpose of Screen: The purpose of this screen is displaying all Doctors from the
 
             </section>
         </main>
-        <script src="../js.js"></script>
+        <script src="../Exit.js"></script>
     </body>
 </html>

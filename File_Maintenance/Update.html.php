@@ -229,6 +229,6 @@ Purpose of Screen: This screen is an extension page of the Amend screen and allo
                 confirmation.classList.remove("open")
             }
         </script>
-        <script src="../js.js"></script>
+        <script src="../Exit.js"></script>
     </body>
 </html>
