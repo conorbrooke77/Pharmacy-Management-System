@@ -19,8 +19,8 @@ Purpose of Screen: The purpose of this screen is displaying all Doctors from the
         <title>Pharma Technology | Delete Doctor</title>
 
         <!-- This Screen uses multiple CSS files to create it's style -->
-        <link rel="Stylesheet" href="../CSS/main.css" />
-        <link rel="Stylesheet" href="../CSS/fileMaintenance.css" />
+        <link rel="Stylesheet" href="../../CSS/main.css" />
+        <link rel="Stylesheet" href="../../CSS/fileMaintenance.css" />
         <link rel="Stylesheet" href="../CSS/Amend_Doctor.css" />
         <link rel="Stylesheet" href="../CSS/Delete_Doctor.css" />
         <link rel="Stylesheet" href="../CSS/Confirmation.css" />
@@ -38,7 +38,7 @@ Purpose of Screen: The purpose of this screen is displaying all Doctors from the
         <nav class="sideBar">
             <header>
                 <div class="logoContainer">
-                    <img src="../Resources/logoV2.png" width="250" height="150"/>
+                    <img src="../../Resources/logoV2.png" width="250" height="150"/>
                 </div>
                 <h2 class="systemText">PHARMACY MANAGMENT <BR> SYSTEM</h2>
             </header>
@@ -54,7 +54,7 @@ Purpose of Screen: The purpose of this screen is displaying all Doctors from the
         </nav>
         <nav class="navBar">
             <div class="profileContainer">
-                <img src="../Resources/profile-icon.png" width="50" height="50"/>
+                <img src="../../Resources/profile-icon.png" width="50" height="50"/>
                 <h3>Welcome Admin</h3>
             </div>
         </nav>
@@ -198,6 +198,6 @@ Purpose of Screen: The purpose of this screen is displaying all Doctors from the
                 confirmation.classList.remove("open")
             }
         </script>
-        <script src="../Exit.js"></script>
+        <script src="../../Exit.js"></script>
     </body>
 </html>

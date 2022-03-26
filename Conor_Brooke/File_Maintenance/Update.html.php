@@ -5,23 +5,24 @@ StudentID: c00260735
 
 Name: Conor Brooke
 
-Date: 28/02/2022
+Date: 15/03/2022
 
-Name of screen: Add Doctor
+Name of screen: Update Doctor
 
-Purpose of Screen: The purpose of this screen is inserting Doctors to the Doctor DB.
+Purpose of Screen: This screen is an extension page of the Amend screen and allows users to update the Doctors entry data.
 
 -->
 
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Pharma Technology | Add Doctor</title>
+        <title>Pharma Technology | Update Doctor</title>
 
         <!-- This Screen uses multiple CSS files to create it's style -->
-        <link rel="Stylesheet" href="../CSS/main.css" />
-        <link rel="Stylesheet" href="../CSS/fileMaintenance.css" />
+        <link rel="Stylesheet" href="../../CSS/main.css" />
+        <link rel="Stylesheet" href="../../CSS/fileMaintenance.css" />
         <link rel="Stylesheet" href="../CSS/Add_Doctor.css" />
+        <link rel="Stylesheet" href="../CSS/Confirmation.css" />
 
         <!-- Fonts added to the page -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,12 +31,14 @@ Purpose of Screen: The purpose of this screen is inserting Doctors to the Doctor
         <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&display=swap" rel="stylesheet">
     </head>
     <body>
+        <!-- Load the php script session at top of body-->
+        <?php require_once '../PHP/View_Doctors/edit.php'?>
+
         <!-- Nav Bar template-->
         <nav class="sideBar">
-            <!-- The Header of the page. Includes projects Title and Logo-->
             <header>
                 <div class="logoContainer">
-                    <img src="../Resources/logoV2.png" width="250" height="150"/>
+                    <img src="../../Resources/logoV2.png" width="250" height="150"/>
                 </div>
                 <h2 class="systemText">PHARMACY MANAGMENT <BR> SYSTEM</h2>
             </header>
@@ -49,10 +52,9 @@ Purpose of Screen: The purpose of this screen is inserting Doctors to the Doctor
                 <li id="closeWindow" ><a class="mainNav" href="">Exit</a></li>
             </ul>
         </nav>
-        <!-- Top Nav Bar -->
         <nav class="navBar">
             <div class="profileContainer">
-                <img src="../Resources/profile-icon.png" width="50" height="50"/>
+                <img src="../../Resources/profile-icon.png" width="50" height="50"/>
                 <h3>Welcome Admin</h3>
             </div>
         </nav>
@@ -61,7 +63,6 @@ Purpose of Screen: The purpose of this screen is inserting Doctors to the Doctor
         <main>
             <section class="content">
                 <nav class="innerMenu">
-                    <!-- Outter Ul -->
                     <ul class="outerUl">
                         <!-- Inner Drop Down Menu-->
                         <li class="outerLi"><a href="">Customer</a>
@@ -101,42 +102,44 @@ Purpose of Screen: The purpose of this screen is inserting Doctors to the Doctor
                         </li>
                     </ul>
                 </nav>
-                
-                <!-- Insert Form -->
-                <form class="Insert-Doctor" action="../PHP/Insert_Doctor/insert_doctor.php" method="Post">
 
+                <!-- Insert Form -->
+                <form class="Insert-Doctor" action="../PHP/View_Doctors/edit.php" method="Post">
                     <!-- Header Information-->
                     <div class="Form-Header">
-                        <h2>Add Doctor</h2>
-                        <p>Complete the form below to add a new Doctor to the system.</p>
+                        <h2>Amend Doctor</h2>
+                        <p>Change information in the form below to update the Doctor.</p>
                     </div>
 
                     <!-- All the input content of the form-->
                     <section class="Input-Content">
+
+                        <!--Hidden input field-->
+                        <input type="hidden" name="docID" value="<?php echo $docID ?>">
                         <div class="inputbox">
                             <label for="surname">Doctor's Surname </label>
-                            <input type="text" name="surname" id="surname" placeholder="Enter Surname" autofocus/>
+                            <input type="text" name="surname" id="surname" value="<?php echo $surname ?>" autofocus/>
                         </div>
         
                         <div class="inputbox">
                             <label for="firstname">Doctor's Firstname </label>
-                            <input type="text" name="firstname" id="firstname" placeholder="Enter Firstname" required/>
+                            <input type="text" name="firstname" id="firstname" value="<?php echo $firstname ?>" required/>
                         </div>
 
                         <!-- When entering a phone number it must match the set pattern-->
                         <div class="inputbox">
                             <label for="telephoneNumber">Surgery's Telephone Number </label>
-                            <input type="text" name="telephoneNumber" id="telephoneNumber" placeholder="Enter Telephone Number" title="A phone number can have the pattern 083 111 1111, (083) 111 1111 or 1111111111" pattern="\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}" required/>
+                            <input type="text" name="telephoneNumber" id="telephoneNumber" value="<?php echo $telephoneNumber ?>" title="A phone number can have the pattern 083 111 1111, (083) 111 1111 or 1111111111" pattern="\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}" required/>
                         </div>
         
                         <div class="inputbox">   
                             <label for="mobileNumber">Surgery's Mobile Number </label>
-                            <input type="text" name="mobileNumber" id="mobileNumber" placeholder="Enter Mobile Number" title="A phone number can have the pattern 083 111 1111, (083) 111 1111 or 1111111111" pattern="\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}" required/>
+                            <input type="text" name="mobileNumber" id="mobileNumber" value="<?php echo $mobileNumber ?>" title="A phone number can have the pattern 083 111 1111, (083) 111 1111 or 1111111111" pattern="\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}" required/>
                         </div>
                         
                         <div class="inputbox">
                             <label for="homeTelephone">Home Telephone Number </label>
-                            <input type="text" name="homeTelephone" id="homeTelephone" placeholder="Enter Home Telephone" title="A phone number can have the pattern 083 111 1111, (083) 111 1111 or 1111111111" pattern="\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}" required/>
+                            <input type="text" name="homeTelephone" id="homeTelephone" value="<?php echo $homeTelephone ?>" title="A phone number can have the pattern 083 111 1111, (083) 111 1111 or 1111111111" pattern="\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}" required/>
                         </div>
 
                         <!-- Surgery Adress Section-->
@@ -147,17 +150,17 @@ Purpose of Screen: The purpose of this screen is inserting Doctors to the Doctor
 
                             <div class="inputbox" id="boxPadding">
                                 <label for="surgeryStreet">Surgery's Street </label>
-                                <input type="text" name="surgeryStreet" id="surgeryStreet" placeholder="Enter Surgery's Street" required/>
+                                <input type="text" name="surgeryStreet" id="surgeryStreet" value="<?php echo $surgeryStreet ?>" required/>
                             </div>
             
                             <div class="inputbox" id="boxPadding">   
                                 <label for="surgeryTown">Surgery's Town </label>
-                                <input type="text" name="surgeryTown" id="surgeryTown" placeholder="Enter Surgery's Town" required/>
+                                <input type="text" name="surgeryTown" id="surgeryTown" value="<?php echo $surgeryTown ?>" required/>
                             </div>
 
                             <div class="inputbox" id="boxPadding">   
                                 <label for="surgeryCounty">Surgery's County </label>
-                                <input type="text" name="surgeryCounty" id="surgeryCounty" placeholder="Enter Surgery's County" required/>
+                                <input type="text" name="surgeryCounty" id="surgeryCounty" value="<?php echo $surgeryCounty ?>" required/>
                             </div>
 
                         </section>
@@ -169,17 +172,17 @@ Purpose of Screen: The purpose of this screen is inserting Doctors to the Doctor
                             <h3>Home Address Information</h3>
                             <div class="inputbox" id="boxPadding">
                                 <label for="homeStreet">Home Street </label>
-                                <input type="text" name="homeStreet" id="homeStreet" placeholder="Enter Home Street" required/>
+                                <input type="text" name="homeStreet" id="homeStreet" value="<?php echo $homeStreet ?>" required/>
                             </div>
             
                             <div class="inputbox" id="boxPadding">   
                                 <label for="homeTown">Home Town </label>
-                                <input type="text" name="homeTown" id="homeTown" placeholder="Enter Home Town" required/>
+                                <input type="text" name="homeTown" id="homeTown" value="<?php echo $homeTown ?>" required/>
                             </div>
 
                             <div class="inputbox" id="boxPadding">   
                                 <label for="homeCounty">Home County </label>
-                                <input type="text" name="homeCounty" id="homeCounty" placeholder="Enter Home County" required/>
+                                <input type="text" name="homeCounty" id="homeCounty" value="<?php echo $homeCounty ?>" required/>
                             </div>
 
                         </section>
@@ -187,15 +190,45 @@ Purpose of Screen: The purpose of this screen is inserting Doctors to the Doctor
 
                     <!-- Action Buttons for the form-->
                     <div class="button">
-                        <!-- Submit btn for inserting data to the Doctor table-->
-                        <input type="submit" name="submit" value="Submit">
-                        <input id="right" type="reset" name="reset" value="Clear Form">
+                        <input type="button" onclick="onUpdate()" name="btn" value="Update">
+                        <input type="button" onclick="location.href='Amend_Doctor.html.php'" value="Return">
                     </div>
-
+                    <div id="confirmation" class="container">
+                        <div class="dialogBox">
+                            <section>
+                                <header class="dialogHeader">
+                                    <h2>Are you sure you want to update the Doctor table?</h2>
+                                </header>
+                                <section class="dialogContent">
+                                    <p>This action will be permanent</p>
+                                </section>
+                                <section class="dialogBottom">
+                                    <input type="button" onclick="onCancel()" name="close" value="Close">
+                                    <input type="submit" id="updateBtn" name="update" value="Update">
+                                </section>
+                            </section>
+                        </div>
+                    </div>
                 </form>
             </section>
         </main>
-        <!-- Js Script for Exit btn-->
-        <script src="../Exit.js"></script>
+        <script>
+            // If you click the Update Btn, this method will add the class open to the dialog box making it display.
+            function onUpdate() {
+                let confirmation = document.getElementById("confirmation");
+
+                if (!confirmation.classList.contains("open")) {
+                    confirmation.classList.add("open");
+                }
+            } 
+
+            // This box removes the open class return the user back to the origanal page.
+            function onCancel() {
+                let confirmation = document.getElementById("confirmation");
+
+                confirmation.classList.remove("open")
+            }
+        </script>
+        <script src="../../Exit.js"></script>
     </body>
 </html>

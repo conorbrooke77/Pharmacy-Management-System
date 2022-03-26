@@ -17,8 +17,8 @@ Purpose of Screen: The purpose of this screen is displaying the Supplier Account
 <html>
     <head>
         <title>Pharma Technology | Counter Sales</title>
-        <link rel="Stylesheet" href="../CSS/main.css" />
-        <link rel="Stylesheet" href="../CSS/Letter.css" />
+        <link rel="Stylesheet" href="../../CSS/main.css" />
+        <link rel="Stylesheet" href="../CSS/Supplier_Account_Menu.css" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@ Purpose of Screen: The purpose of this screen is displaying the Supplier Account
         <nav class="sideBar">
             <header>
                 <div class="logoContainer">
-                    <img src="../Resources/logoV2.png" width="250" height="150"/>
+                    <img src="../../Resources/logoV2.png" width="250" height="150"/>
                 </div>
                 <h2 class="systemText">PHARMACY MANAGMENT <BR> SYSTEM</h2>
             </header>
@@ -46,7 +46,7 @@ Purpose of Screen: The purpose of this screen is displaying the Supplier Account
         </nav>
         <nav class="navBar">
             <div class="profileContainer">
-                <img src="../Resources/profile-icon.png" width="50" height="50"/>
+                <img src="../../Resources/profile-icon.png" width="50" height="50"/>
                 <h3>Welcome Admin</h3>
             </div>
         </nav>
@@ -54,20 +54,18 @@ Purpose of Screen: The purpose of this screen is displaying the Supplier Account
         <!-- Main functionality and content -->
         <main>
             <section class="content">
+                <section class="menu">
+                    <section class="innerContent">
+                        <h2>Supplier Accounts Menu</h2>
 
-                    <h2>Letter To Supplier</h2>
-                    <section class="letter">
-                        <div id="companyAddress">
-                            <p>PharmaTech Pharmacy,</p>
-                            <p>Low Street,</p>
-                            <p>Laois,</p>
-                            <p>03/04/2022</p>
-                        </div>
-                        <!-- PHP file to load all invoice details -->
-                        <?php include '../PHP/Supplier_Payments/loadInvoice.php' ?>
+                        <ul class="supplierMenu">
+                            <li><a class="supplierLink" href="New_Invoices_From_Suppliers.html">New Invoices from Suppliers</a></li>
+                            <li><a class="supplierLink" href="Payment_To_Suppliers.html.php">Payments To Suppliers</a></li>
+                        </ul>
                     </section>
+                </section>
             </section>
         </main>
-        <script src="../Exit.js"></script>
+        <script src="../../Exit.js"></script>
     </body>
 </html>

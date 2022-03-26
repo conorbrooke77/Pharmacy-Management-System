@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Pharma Technology | Supplier Account Menu</title>
-        <link rel="Stylesheet" href="../CSS/main.css" />
+        <link rel="Stylesheet" href="../../CSS/main.css" />
         <link rel="Stylesheet" href="../CSS/Pay_Supplier.css" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
         <nav class="sideBar">
             <header>
                 <div class="logoContainer">
-                    <img src="../Resources/logoV2.png" width="250" height="150"/>
+                    <img src="../../Resources/logoV2.png" width="250" height="150"/>
                 </div>
                 <h2 class="systemText">PHARMACY MANAGMENT <BR> SYSTEM</h2>
             </header>
@@ -31,7 +31,7 @@
         </nav>
         <nav class="navBar">
             <div class="profileContainer">
-                <img src="../Resources/profile-icon.png" width="50" height="50"/>
+                <img src="../../Resources/profile-icon.png" width="50" height="50"/>
                 <h3>Welcome Admin</h3>
             </div>
         </nav>
@@ -120,6 +120,6 @@
             }
 
         </script>
-        <script src="../Exit.js"></script>
+        <script src="../../Exit.js"></script>
     </body>
 </html>
